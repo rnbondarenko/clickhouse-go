@@ -23,7 +23,7 @@ import (
 	"github.com/ClickHouse/ch-go/proto"
 	"reflect"
 
-	"github.com/ClickHouse/clickhouse-go/v2/lib/binary"
+	"github.com/rnbondarenko/clickhouse-go/v2/lib/binary"
 )
 
 type FixedString struct {
@@ -120,6 +120,16 @@ func (col *FixedString) Append(v interface{}) (nulls []uint8, err error) {
 		}
 		col.col.Append(data)
 		nulls = make([]uint8, len(data)/col.col.Size)
+	case any:
+		value, ok := v.(string)
+		if !ok {
+			return nil, &ColumnConverterError{
+				Op:   "Append",
+				To:   "FixedString",
+				From: fmt.Sprintf("%T", v),
+			}
+		}
+		col.col.Append(binary.Str2Bytes(value))
 	default:
 		return nil, &ColumnConverterError{
 			Op:   "Append",

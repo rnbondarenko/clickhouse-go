@@ -1033,6 +1033,10 @@ func (col *Int64) AppendRow(v interface{}) error {
 		col.col.Append(int64(v))
 	case *time.Duration:
 		col.col.Append(int64(*v))
+	case float32:
+		col.col.Append(int64(v))
+	case float64:
+		col.col.Append(int64(v))
 	default:
 		return &ColumnConverterError{
 			Op:   "AppendRow",

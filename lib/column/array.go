@@ -115,6 +115,17 @@ func (col *Array) Row(i int, ptr bool) interface{} {
 }
 
 func (col *Array) Append(v interface{}) (nulls []uint8, err error) {
+
+	switch v.(type) {
+	case
+		string,
+		bool,
+		int, int8, int16, int32, int64,
+		uint, uint8, uint16, uint32, uint64,
+		float32, float64:
+		v = [][]interface{}{[]interface{}{v}}
+	}
+
 	value := reflect.Indirect(reflect.ValueOf(v))
 	if value.Kind() != reflect.Slice {
 		return nil, &ColumnConverterError{

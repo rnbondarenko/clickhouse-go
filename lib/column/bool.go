@@ -109,6 +109,16 @@ func (col *Bool) Append(v interface{}) (nulls []uint8, err error) {
 			}
 			col.Append(v[i])
 		}
+	case any:
+		value, ok := v.(bool)
+		if !ok {
+			return nil, &ColumnConverterError{
+				Op:   "Append",
+				To:   "Bool",
+				From: fmt.Sprintf("%T", v),
+			}
+		}
+		col.Append(&value)
 	default:
 		return nil, &ColumnConverterError{
 			Op:   "Append",

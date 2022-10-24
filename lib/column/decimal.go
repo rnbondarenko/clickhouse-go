@@ -165,6 +165,16 @@ func (col *Decimal) Append(v interface{}) (nulls []uint8, err error) {
 				col.append(&value)
 			}
 		}
+	case any:
+		value, ok := v.(decimal.Decimal)
+		if !ok {
+			return nil, &ColumnConverterError{
+				Op:   "Append",
+				To:   string(col.chType),
+				From: fmt.Sprintf("%T", v),
+			}
+		}
+		col.append(&value)
 	default:
 		return nil, &ColumnConverterError{
 			Op:   "Append",

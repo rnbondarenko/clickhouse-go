@@ -20,9 +20,9 @@ package clickhouse_api
 import (
 	"context"
 	"fmt"
-	"github.com/ClickHouse/clickhouse-go/v2"
-	clickhouse_tests "github.com/ClickHouse/clickhouse-go/v2/tests"
 	"github.com/google/uuid"
+	"github.com/rnbondarenko/clickhouse-go/v2"
+	clickhouse_tests "github.com/rnbondarenko/clickhouse-go/v2/tests"
 	"net"
 	"time"
 )

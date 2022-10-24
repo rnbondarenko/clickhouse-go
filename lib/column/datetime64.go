@@ -27,7 +27,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ClickHouse/clickhouse-go/v2/lib/timezone"
+	"github.com/rnbondarenko/clickhouse-go/v2/lib/timezone"
 )
 
 var (
@@ -192,6 +192,20 @@ func (col *DateTime64) Append(v interface{}) (nulls []uint8, err error) {
 			}
 			col.AppendRow(v[i])
 		}
+	case any:
+		_value, ok := v.(string)
+		if !ok {
+			return nil, &ColumnConverterError{
+				Op:   "Append",
+				To:   "Datetime64",
+				From: fmt.Sprintf("%T", v),
+			}
+		}
+		value, err := col.parseDateTime(_value)
+		if err != nil {
+			return nil, err
+		}
+		col.col.Append(value)
 	default:
 		return nil, &ColumnConverterError{
 			Op:   "Append",

@@ -24,7 +24,7 @@ import (
 	"github.com/ClickHouse/ch-go/proto"
 	"reflect"
 
-	"github.com/ClickHouse/clickhouse-go/v2/lib/binary"
+	"github.com/rnbondarenko/clickhouse-go/v2/lib/binary"
 )
 
 type String struct {
@@ -159,6 +159,17 @@ func (col *String) Append(v interface{}) (nulls []uint8, err error) {
 		for i := range v {
 			col.col.Append(string(v[i]))
 		}
+	case any:
+		value, ok := v.(string)
+
+		if !ok {
+			return nil, &ColumnConverterError{
+				Op:   "Append",
+				To:   "String",
+				From: fmt.Sprintf("%T", v),
+			}
+		}
+		col.col.Append(value)
 	default:
 		return nil, &ColumnConverterError{
 			Op:   "Append",

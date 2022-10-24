@@ -129,6 +129,17 @@ func (col *UUID) Append(v interface{}) (nulls []uint8, err error) {
 				col.col.Append(uuid.UUID{})
 			}
 		}
+	case any:
+		value, ok := v.(uuid.UUID)
+
+		if !ok {
+			return nil, &ColumnConverterError{
+				Op:   "Append",
+				To:   "UUID",
+				From: fmt.Sprintf("%T", v),
+			}
+		}
+		col.col.Append(value)
 	default:
 		return nil, &ColumnConverterError{
 			Op:   "Append",

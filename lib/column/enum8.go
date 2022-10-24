@@ -109,6 +109,24 @@ func (col *Enum8) Append(v interface{}) (nulls []uint8, err error) {
 				nulls[i] = 1
 			}
 		}
+	case any:
+		_value, ok := v.(string)
+		if !ok {
+			return nil, &ColumnConverterError{
+				Op:   "Append",
+				To:   string(col.chType),
+				From: fmt.Sprintf("%T", v),
+			}
+		}
+		value, ok := col.iv[_value]
+		if !ok {
+			return nil, &ColumnConverterError{
+				Op:   "Append",
+				To:   "Enum8",
+				From: fmt.Sprintf("%T", v),
+			}
+		}
+		col.col.Append(value)
 	default:
 		return nil, &ColumnConverterError{
 			Op:   "Append",

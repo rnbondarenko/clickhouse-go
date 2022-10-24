@@ -144,6 +144,20 @@ func (col *Date32) Append(v interface{}) (nulls []uint8, err error) {
 				col.col.Append(value)
 			}
 		}
+	case any:
+		_value, ok := v.(string)
+		if !ok {
+			return nil, &ColumnConverterError{
+				Op:   "Append",
+				To:   "Date32",
+				From: fmt.Sprintf("%T", v),
+			}
+		}
+		value, err := col.parseDate(_value)
+		if err != nil {
+			return nil, err
+		}
+		col.col.Append(value)
 	default:
 		return nil, &ColumnConverterError{
 			Op:   "Append",

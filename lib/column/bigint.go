@@ -96,6 +96,17 @@ func (col *BigInt) Append(v interface{}) (nulls []uint8, err error) {
 				col.append(big.NewInt(0))
 			}
 		}
+	case any:
+		value, ok := v.(big.Int)
+
+		if !ok {
+			return nil, &ColumnConverterError{
+				Op:   "Append",
+				To:   string(col.chType),
+				From: fmt.Sprintf("%T", v),
+			}
+		}
+		col.append(&value)
 	default:
 		return nil, &ColumnConverterError{
 			Op:   "Append",

@@ -22,7 +22,8 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/ClickHouse/clickhouse-go/v2/lib/proto"
+	"github.com/rnbondarenko/clickhouse-go/v2/lib/column"
+	"github.com/rnbondarenko/clickhouse-go/v2/lib/proto"
 )
 
 type ServerVersion = proto.ServerHandshake
@@ -80,6 +81,8 @@ type (
 		Abort() error
 		Append(v ...interface{}) error
 		AppendStruct(v interface{}) error
+		GetColumns() []column.Interface
+		GetBlock() *proto.Block
 		Column(int) BatchColumn
 		Flush() error
 		Send() error

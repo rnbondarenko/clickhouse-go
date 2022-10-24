@@ -109,6 +109,23 @@ func (col *Enum16) Append(v interface{}) (nulls []uint8, err error) {
 				nulls[i] = 1
 			}
 		}
+	case any:
+		_value, ok := v.(string)
+		if !ok {
+			return nil, &Error{
+				Err:        fmt.Errorf("unknown element %q", _value),
+				ColumnType: string(col.chType),
+			}
+		}
+		value, ok := col.iv[_value]
+		if !ok {
+			return nil, &Error{
+				Err:        fmt.Errorf("unknown element %q", _value),
+				ColumnType: string(col.chType),
+			}
+		}
+		col.col.Append(value)
+
 	}
 	return
 }
