@@ -4,7 +4,6 @@ go 1.19
 
 require (
 	github.com/ClickHouse/ch-go v0.48.0
-	github.com/ClickHouse/clickhouse-go v1.5.4
 	github.com/andybalholm/brotli v1.0.4
 	github.com/docker/docker v20.10.20+incompatible
 	github.com/docker/go-connections v0.4.0
