@@ -146,6 +146,14 @@ func (b *httpBatch) AppendStruct(v interface{}) error {
 	return b.Append(values...)
 }
 
+func (b *httpBatch) GetColumns() []column.Interface {
+	return b.block.Columns
+}
+
+func (b *httpBatch) GetBlock() *proto.Block {
+	return b.block
+}
+
 func (b *httpBatch) Column(idx int) driver.BatchColumn {
 	if len(b.block.Columns) <= idx {
 		return &batchColumn{

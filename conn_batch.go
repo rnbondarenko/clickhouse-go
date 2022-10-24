@@ -119,6 +119,14 @@ func (b *batch) AppendStruct(v interface{}) error {
 	return b.Append(values...)
 }
 
+func (b *batch) GetColumns() []column.Interface {
+	return b.block.Columns
+}
+
+func (b *batch) GetBlock() *proto.Block {
+	return b.block
+}
+
 func (b *batch) IsSent() bool {
 	return b.sent
 }
