@@ -19,7 +19,7 @@ package std
 
 import (
 	"fmt"
-	clickhouse_tests "github.com/rnbondarenko/clickhouse-go/v2/tests"
+	clickhouse_tests "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/tests"
 	"github.com/stretchr/testify/require"
 	"strconv"
 	"testing"

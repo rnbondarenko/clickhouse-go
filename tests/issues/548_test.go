@@ -2,11 +2,11 @@ package issues
 
 import (
 	"context"
-	clickhouse_tests "github.com/rnbondarenko/clickhouse-go/v2/tests"
+	clickhouse_tests "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/tests"
 	"testing"
 	"time"
 
-	"github.com/rnbondarenko/clickhouse-go/v2"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2"
 	"github.com/stretchr/testify/assert"
 )
 

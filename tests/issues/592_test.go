@@ -2,7 +2,7 @@ package issues
 
 import (
 	"context"
-	"github.com/rnbondarenko/clickhouse-go/v2"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

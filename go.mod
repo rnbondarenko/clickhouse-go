@@ -1,4 +1,4 @@
-module github.com/rnbondarenko/clickhouse-go/v2
+module git.emp.loc/ruslan.bondarenko/clickhouse-go/v2
 
 go 1.19
 

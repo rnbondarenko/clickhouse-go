@@ -1,9 +1,9 @@
 package issues
 
 import (
-	"github.com/rnbondarenko/clickhouse-go/v2"
-	clickhouse_tests "github.com/rnbondarenko/clickhouse-go/v2/tests"
-	clickhouse_std_tests "github.com/rnbondarenko/clickhouse-go/v2/tests/std"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2"
+	clickhouse_tests "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/tests"
+	clickhouse_std_tests "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/tests/std"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"strconv"

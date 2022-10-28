@@ -17,7 +17,7 @@
 
 package std
 
-import "github.com/rnbondarenko/clickhouse-go/v2"
+import "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2"
 
 func Exec() error {
 	conn, err := GetStdOpenDBConnection(clickhouse.Native, nil, nil, nil)

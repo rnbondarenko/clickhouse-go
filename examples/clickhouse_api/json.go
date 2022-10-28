@@ -20,8 +20,8 @@ package clickhouse_api
 import (
 	"context"
 	"fmt"
-	"github.com/rnbondarenko/clickhouse-go/v2"
-	clickhouse_tests "github.com/rnbondarenko/clickhouse-go/v2/tests"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2"
+	clickhouse_tests "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/tests"
 )
 
 func InsertReadJSON() error {
@@ -139,13 +139,13 @@ func ReadComplexJSON() error {
 			"name": "Dale",
 			"repositories": []Repository{
 				{URL: "https://github.com/ClickHouse/clickhouse-python", Releases: []Releases{{Version: "2.0.0"}, {Version: "2.1.0"}}},
-				{URL: "https://github.com/rnbondarenko/clickhouse-go"},
+				{URL: "https://git.emp.loc/ruslan.bondarenko/clickhouse-go"},
 			},
 			"organizations": []string{},
 		},
 		"labels": []string{},
 		"contributors": []map[string]interface{}{
-			{"Id": int16(2244), "Name": "Dale", "orgs": []string{"Support Engineer", "Consulting", "PM", "Integrations"}, "Repositories": []map[string]interface{}{{"url": "https://github.com/rnbondarenko/clickhouse-go", "Releases": []map[string]interface{}{{"Version": "2.0.0"}, {"Version": "2.1.0"}}}, {"url": "https://github.com/grafana/clickhouse"}}},
+			{"Id": int16(2244), "Name": "Dale", "orgs": []string{"Support Engineer", "Consulting", "PM", "Integrations"}, "Repositories": []map[string]interface{}{{"url": "https://git.emp.loc/ruslan.bondarenko/clickhouse-go", "Releases": []map[string]interface{}{{"Version": "2.0.0"}, {"Version": "2.1.0"}}}, {"url": "https://github.com/grafana/clickhouse"}}},
 		},
 	}
 	batch, err := conn.PrepareBatch(ctx, "INSERT INTO example")

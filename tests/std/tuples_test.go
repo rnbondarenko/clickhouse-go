@@ -19,13 +19,13 @@ package std
 import (
 	"crypto/tls"
 	"fmt"
-	clickhouse_tests "github.com/rnbondarenko/clickhouse-go/v2/tests"
+	clickhouse_tests "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/tests"
 	"github.com/stretchr/testify/require"
 	"strconv"
 	"testing"
 	"time"
 
-	"github.com/rnbondarenko/clickhouse-go/v2"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2"
 	"github.com/stretchr/testify/assert"
 )
 

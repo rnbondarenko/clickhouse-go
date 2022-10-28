@@ -25,8 +25,8 @@ import (
 	_ "net/http/pprof"
 	"time"
 
-	"github.com/rnbondarenko/clickhouse-go/v2"
-	clickHouse_tests "github.com/rnbondarenko/clickhouse-go/v2/tests/std"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2"
+	clickHouse_tests "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/tests/std"
 )
 
 var conn *sql.DB

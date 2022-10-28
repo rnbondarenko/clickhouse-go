@@ -22,8 +22,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/rnbondarenko/clickhouse-go/v2"
-	"github.com/rnbondarenko/clickhouse-go/v2/ext"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/ext"
 )
 
 func ExternalData() error {

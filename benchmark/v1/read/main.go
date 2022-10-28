@@ -23,7 +23,7 @@ import (
 	"log"
 	"time"
 
-	_ "github.com/rnbondarenko/clickhouse-go"
+	_ "git.emp.loc/ruslan.bondarenko/clickhouse-go"
 )
 
 const query = `

@@ -23,8 +23,8 @@ import (
 	"log"
 	"reflect"
 
-	_ "github.com/rnbondarenko/clickhouse-go/v2"
-	clickHouse_tests "github.com/rnbondarenko/clickhouse-go/v2/tests/std"
+	_ "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2"
+	clickHouse_tests "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/tests/std"
 )
 
 type DatabaseFrame struct {

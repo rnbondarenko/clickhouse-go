@@ -28,8 +28,8 @@ import (
 	"strings"
 	"sync/atomic"
 
-	"github.com/rnbondarenko/clickhouse-go/v2/lib/column"
-	ldriver "github.com/rnbondarenko/clickhouse-go/v2/lib/driver"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/lib/column"
+	ldriver "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/lib/driver"
 )
 
 var globalConnID int64

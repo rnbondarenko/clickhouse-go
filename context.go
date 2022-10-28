@@ -21,7 +21,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/rnbondarenko/clickhouse-go/v2/ext"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/ext"
 	"go.opentelemetry.io/otel/trace"
 )
 

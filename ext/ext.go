@@ -18,8 +18,8 @@
 package ext
 
 import (
-	"github.com/rnbondarenko/clickhouse-go/v2/lib/column"
-	"github.com/rnbondarenko/clickhouse-go/v2/lib/proto"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/lib/column"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/lib/proto"
 )
 
 func NewTable(name string, columns ...func(t *Table) error) (*Table, error) {

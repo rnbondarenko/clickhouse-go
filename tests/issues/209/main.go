@@ -23,9 +23,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/rnbondarenko/clickhouse-go/v2"
-	"github.com/rnbondarenko/clickhouse-go/v2/lib/driver"
-	clickhouse_tests "github.com/rnbondarenko/clickhouse-go/v2/tests"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/lib/driver"
+	clickhouse_tests "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/tests"
 )
 
 func getClickhouseClient() driver.Conn {

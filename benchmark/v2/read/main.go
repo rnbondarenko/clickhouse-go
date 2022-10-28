@@ -23,7 +23,7 @@ import (
 	"log"
 	"time"
 
-	_ "github.com/rnbondarenko/clickhouse-go/v2"
+	_ "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2"
 )
 
 func benchmarkRead(conn *sql.DB) error {

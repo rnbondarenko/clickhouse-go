@@ -25,8 +25,8 @@ import (
 	"testing"
 	"time"
 
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2"
 	"github.com/google/uuid"
-	"github.com/rnbondarenko/clickhouse-go/v2"
 	"github.com/shopspring/decimal"
 	"github.com/stretchr/testify/assert"
 )

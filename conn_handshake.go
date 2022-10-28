@@ -22,7 +22,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/rnbondarenko/clickhouse-go/v2/lib/proto"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/lib/proto"
 )
 
 func (c *connect) handshake(database, username, password string) error {

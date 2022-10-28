@@ -20,9 +20,9 @@ package std
 import (
 	"crypto/tls"
 	"database/sql"
-	"github.com/rnbondarenko/clickhouse-go/v2"
-	clickhouse_tests "github.com/rnbondarenko/clickhouse-go/v2/tests"
-	clickhouse_tests_std "github.com/rnbondarenko/clickhouse-go/v2/tests/std"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2"
+	clickhouse_tests "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/tests"
+	clickhouse_tests_std "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/tests/std"
 )
 
 const TestSet string = "examples_std_api"

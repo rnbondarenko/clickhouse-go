@@ -22,8 +22,8 @@ import (
 	"log"
 	"time"
 
-	"github.com/rnbondarenko/clickhouse-go/v2"
-	clickhouse_tests "github.com/rnbondarenko/clickhouse-go/v2/tests"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2"
+	clickhouse_tests "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/tests"
 )
 
 func example() error {

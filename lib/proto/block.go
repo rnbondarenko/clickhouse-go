@@ -23,8 +23,8 @@ import (
 	"sort"
 	"time"
 
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/lib/column"
 	"github.com/ClickHouse/ch-go/proto"
-	"github.com/rnbondarenko/clickhouse-go/v2/lib/column"
 )
 
 type Block struct {

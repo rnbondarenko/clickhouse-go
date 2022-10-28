@@ -19,7 +19,7 @@ package main
 
 import (
 	"context"
-	clickhouse_tests "github.com/rnbondarenko/clickhouse-go/v2/tests"
+	clickhouse_tests "git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/tests"
 	"log"
 	"os"
 	"os/signal"
@@ -29,10 +29,10 @@ import (
 	"net/http"
 	_ "net/http/pprof"
 
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/lib/driver"
 	"github.com/google/uuid"
 	_ "github.com/mkevac/debugcharts"
-	"github.com/rnbondarenko/clickhouse-go/v2"
-	"github.com/rnbondarenko/clickhouse-go/v2/lib/driver"
 )
 
 type App struct {

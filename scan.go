@@ -23,7 +23,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/rnbondarenko/clickhouse-go/v2/lib/proto"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/lib/proto"
 )
 
 func (ch *clickhouse) Select(ctx context.Context, dest interface{}, query string, args ...interface{}) error {

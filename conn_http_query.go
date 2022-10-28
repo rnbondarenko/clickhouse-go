@@ -21,8 +21,8 @@ import (
 	"bytes"
 	"context"
 	"errors"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/lib/proto"
 	chproto "github.com/ClickHouse/ch-go/proto"
-	"github.com/rnbondarenko/clickhouse-go/v2/lib/proto"
 	"io"
 	"strings"
 )

@@ -25,7 +25,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rnbondarenko/clickhouse-go/v2/lib/timezone"
+	"git.emp.loc/ruslan.bondarenko/clickhouse-go/v2/lib/timezone"
 )
 
 const ClientName = "Golang SQLDriver"
