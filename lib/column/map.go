@@ -109,7 +109,15 @@ func (col *Map) ScanRow(dest interface{}, i int) error {
 }
 
 func (col *Map) Append(v interface{}) (nulls []uint8, err error) {
-	value := reflect.Indirect(reflect.ValueOf(v))
+
+	var vv []map[string]any
+	switch v.(type) {
+	case map[string]any:
+		vv = make([]map[string]any, 1)
+		vv[0] = v.(map[string]any)
+	}
+
+	value := reflect.Indirect(reflect.ValueOf(vv))
 	if value.Kind() != reflect.Slice {
 		return nil, &ColumnConverterError{
 			Op:   "Append",
@@ -128,7 +136,7 @@ func (col *Map) Append(v interface{}) (nulls []uint8, err error) {
 
 func (col *Map) AppendRow(v interface{}) error {
 	value := reflect.Indirect(reflect.ValueOf(v))
-	if value.Type() == col.scanType {
+	if value.Type() == col.scanType || value.Type() == reflect.TypeOf(map[string]any{}) {
 		var (
 			size int64
 			iter = value.MapRange()
